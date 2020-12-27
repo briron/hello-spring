@@ -2,8 +2,7 @@ package hello.hellospring.service;
 
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,6 +20,7 @@ class MemberServiceIntegrationTest {
     @Autowired MemberRepository memberRepository;
 
     @Test
+    @DisplayName("회원가입")
     void join() {
         Member member = new Member();
         member.setName("test");
@@ -32,6 +32,7 @@ class MemberServiceIntegrationTest {
     }
 
     @Test
+    @DisplayName("중복가입 예")
     public void duplicateMemberException(){
         // given
         Member member1 = new Member();
